@@ -17,12 +17,12 @@ findWinner = arrayBoard => {
             //sum row
             board[row] += arrayBoard[row][col];
             //sum col
-            board[row + 3] += arrayBoard[row][col];
+            board[col + 3] += arrayBoard[row][col];
         }
     }
     //sum diagonal
-    board[6] = board[0][0] + board[1][1] + board[2][2];
-    board[7] = board[0][2] + board[1][1] + board[2][0];
+    board[6] = arrayBoard[0][0] + arrayBoard[1][1] +arrayBoard[2][2];
+    board[7] = arrayBoard[0][2] + arrayBoard[1][1] + arrayBoard[2][0];
     let winner = '';
     if (board.indexOf(3) != -1) winner = 'X';
     if (board.indexOf(-3) != -1) winner = '0';
