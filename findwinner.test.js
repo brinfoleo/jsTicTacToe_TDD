@@ -81,3 +81,10 @@ test("Find the winner 0 on the diagonal 2.", () => {
         ['0', 'X', null]];
     expect(findWinner(board)).toBe('0');
 });
+test("no-win game.", () => {
+    let board =
+        [[null, 'X', '0'],
+        ['X', null, null],
+        ['0', 'X', '0']];
+    expect(findWinner(board)).toBe('');
+});
