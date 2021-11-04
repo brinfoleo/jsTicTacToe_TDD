@@ -1,9 +1,44 @@
-const findwinner=require('./findwinner.js');
+const findwinner = require('./findwinner.js');
 
 
-test ("Find the winner ",()=>{
-    let board=[['0','X',null],
-                    ['0','X',null],
-                    ['0',null,null]];
+test("Find the winner 0 in column 1 .", () => {
+    let board = [['0', 'X', null],
+    ['0', 'X', null],
+    ['0', null, null]];
     expect(findWinner(board)).toBe('0');
+});
+
+test("Find the winner 0 in column 2 .", () => {
+    let board = [['X', '0', null],
+    ['X', '0', null],
+    [null, '0', null]];
+    expect(findWinner(board)).toBe('0');
+});
+
+test("Find the winner 0 in column 3 .", () => {
+    let board = [['X', null, '0'],
+    ['X', null, '0'],
+    [null, null, '0']];
+    expect(findWinner(board)).toBe('0');
+});
+
+test("Find the winner X in row 1.", () => {
+    let board = [['X', 'X', 'X'],
+    ['X', null, '0'],
+    ['0', null, '0']];
+    expect(findWinner(board)).toBe('X');
+
+});
+test("Find the winner X in row 2.", () => {
+    let board = [['0', 'X', null],
+    ['X', 'X', 'X'],
+    ['0', null, null]];
+    expect(findWinner(board)).toBe('X');
+});
+
+test("Find the winner X in row 3.", () => {
+    let board = [['0', 'X', null],
+    ['0', null, null],
+    ['X', 'X', 'X']];
+    expect(findWinner(board)).toBe('X');
 });
