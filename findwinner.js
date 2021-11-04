@@ -18,17 +18,16 @@ findWinner = arrayBoard => {
             board[row] += arrayBoard[row][col];
             //sum col
             board[row + 3] += arrayBoard[row][col];
-
-            //sum diagonal
-
-
         }
-
     }
+    //sum diagonal
     board[6] = board[0][0] + board[1][1] + board[2][2];
     board[7] = board[0][2] + board[1][1] + board[2][0];
-    console.log(board);
-    return '0';
+    let winner = '';
+    if (board.indexOf(3) != -1) winner = 'X';
+    if (board.indexOf(-3) != -1) winner = '0';
+
+    return winner;
 }
 
 module.exports = findWinner;
