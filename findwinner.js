@@ -1,6 +1,6 @@
 findWinner = arrayBoard => {
     //board = r0,r1,r2,c0,c1,c2,d0,d1
-    let board = [];
+    let board = [0,0,0,0,0,0,0,0];
 
     for (let row = 0; row < arrayBoard.length; row++) {
         for (let col = 0; col < arrayBoard[row].length; col++) {
